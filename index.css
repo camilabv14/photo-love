@@ -198,9 +198,7 @@ ul li button:hover {
   margin: 40px;
   border-radius: 30px;
 }
-.inactive {
-  display: none;
-}
+
 @media (min-width: 641px) {
   .lupita {
     position: absolute;
