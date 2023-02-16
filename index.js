@@ -1,27 +1,24 @@
 const all = document.querySelector(".allImg");
 const funny = document.querySelector(".funnyImg");
 const lovely = document.querySelector(".lovelyImg");
+const photoDiv = document.querySelector(".photo")
 
-function allClicked() {
-  let x = document.querySelector(".main-container");
-  let y = x.querySelectorAll("div");
-  if (all.onclick) {
-    for (i = 0; i < y.length; i++) {
-      if (y[i].classList.contains("all")) {
-        y[i].style.display = "inline-block";
-      } else {
-        y[i].style.display = "none";
-      }
-    }
-  }
+
+function filterByAll() {
+ const containsAll = photoDiv.classList.contains("all")
+ if (!containsAll) {
+  photoDiv.classList.add("inactive")
+ }
+ photoDiv.classList.toggle("inactive")
 }
-function funnyClicked() {
-  let y = x.querySelectorAll(".all");
-  if (funny.onclick) {
-      if (y.classList.contains("funny")) {
-        y.style.display = "inline-block";
-      } else {
-        y.style.display = "none";
-      }
-    }
+
+function filterByFunny() {
+  const containsFunny = photoDiv.classList.contains("funny")
+  if (!containsAll) {
+   photoDiv.classList.add("inactive")
   }
+  photoDiv.classList.toggle("inactive")
+ }
+
+all.addEventListener("click", filterByAll)
+
