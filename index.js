@@ -1,23 +1,24 @@
 const all = document.querySelector(".allImg");
 const funny = document.querySelector(".funnyImg");
 const lovely = document.querySelector(".lovelyImg");
-const photoDiv = document.querySelector(".photo")
+const photoDiv = document.querySelectorAll(".photo")
+const photoDivArr = [...photoDiv]
 
 
 function filterByAll() {
- const containsAll = photoDiv.classList.contains("all")
+ const containsAll = photoDivArr.classList.contains("all")
  if (!containsAll) {
-  photoDiv.classList.add("inactive")
+  photoDivArr.classList.add("inactive")
  }
- photoDiv.classList.toggle("inactive")
+ photoDivArr.classList.toggle("inactive")
 }
 
 function filterByFunny() {
   const containsFunny = photoDiv.classList.contains("funny")
   if (!containsAll) {
-   photoDiv.classList.add("inactive")
+    photoDivArr.classList.add("inactive")
   }
-  photoDiv.classList.toggle("inactive")
+  photoDivArr.classList.toggle("inactive")
  }
 
 all.addEventListener("click", filterByAll)
